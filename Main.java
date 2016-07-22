@@ -1,8 +1,8 @@
-package task2_1.main;
+package task2.main;
 
-import task2_1.officesupply.OfficeSupply;
+import task2.officesupply.OfficeSupply;
 
-import task2_1.worker.Worker;
+import task2.worker.Worker;
 
 import java.util.Scanner;
 
@@ -129,7 +129,35 @@ public class Main
 					break;
 					
 				}
-    				
+    
+				case "add item":  
+					
+				{
+						
+					System.out.println("What number?");
+						
+					s = scan.nextLine();
+						
+					worker[Integer.parseInt(s)].AddItem();
+             					
+					break;
+					
+				}
+ 	
+				case "add beginner stuff":  
+					
+				{
+						
+					System.out.println("What number?");
+						
+					s = scan.nextLine();
+						
+					worker[Integer.parseInt(s)].AddBeginnerStuff();
+             					
+					break;
+					
+				}
+ 			
 				default: 
 					
 				{
@@ -139,6 +167,10 @@ public class Main
 					System.out.println("          show all workers");
 						
 					System.out.println("          show worker cost");
+
+					System.out.println("          add item");
+
+					System.out.println("          add beginner stuff");
 			
 			
              	break;

@@ -1,4 +1,4 @@
-package task2_1.officesupply;
+package task2.officesupply;
 
 //import javase01.t01.log.Log;
 
@@ -78,6 +78,8 @@ public class OfficeSupply
 	
 	}
 
+
+
 	
 
 
@@ -86,4 +88,5 @@ public class OfficeSupply
 
 }
 
-	 
+	
+
