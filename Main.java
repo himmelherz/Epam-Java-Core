@@ -25,7 +25,7 @@ public class Main
 	}
 
 	public static void main(String[] args) 
-		{	
+		{	int counter = 0;
 			OfficeSupply supply = new OfficeSupply();
 			OfficeSupply pen_for_examine = new OfficeSupply();	
 
@@ -50,17 +50,45 @@ public class Main
 			}
 			
 			AddWorker(worker);
-			for(int i=0;i<10;i++)
-			{
-				worker[i].ShowHim();
-			}
 			
+			Scanner scan = new Scanner(System.in);
+			while(counter == 0)
+			{
+				System.out.println("Enter your request");
+				String s = scan.nextLine();
+				String monthString;
+				switch (s) 
+				{
+    				case "show all workers":  
+					{
+						for(int i=0;i<10;i++)
+						{
+							worker[i].ShowHim();
+						}
+             					break;
+					}
+				
+    				case "add worker":  
+					{
+						AddWorker(worker);
+             					break;
+					}
+    				default: 
+					{
+						System.out.println("Unknown command");
+						System.exit(0);
+             					break;
+					}
+				}
+
+				
+			}
         
 		}
 
 
 
 
-}
 
+}
 	 
