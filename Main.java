@@ -9,10 +9,12 @@ public class Main
 
 	public static void AddWorker(Worker[] worker)
 	{
+		
 		Scanner scan = new Scanner(System.in);
 		int k =0;
 		for(int i=0; i< worker.length;i++)
 		{
+			
 			if(worker[i].name.equals("") && (k == 0))
 			{
 				k = 1;
@@ -29,34 +31,19 @@ public class Main
 			OfficeSupply supply = new OfficeSupply();
 			OfficeSupply pen_for_examine = new OfficeSupply();	
 
-			System.out.println(supply.hashCode());
-			System.out.println(supply.toString());
-			System.out.println(supply.equals(pen_for_examine));
-
-			pen_for_examine.cost = 1;
-
 			
-			System.out.println(supply.equals(pen_for_examine));
-
-			String string_for_suicide = new String();		
-
-			System.out.println(supply.equals(string_for_suicide));
-			
-			Worker worker[] = new Worker[10];
-			for(int i=0;i<10;i++)
-			{
-				worker[i] = new Worker();
-				worker[i].Fill();
-			}
-			
-			AddWorker(worker);
-			
+			Worker worker[] = new Worker[100];
+				
+		
+			for(int i=0;i<100;i++)
+						{
+							worker[i] = new Worker();;
+						}
 			Scanner scan = new Scanner(System.in);
 			while(counter == 0)
 			{
 				System.out.println("Enter your request");
 				String s = scan.nextLine();
-				String monthString;
 				switch (s) 
 				{
     				case "show all workers":  
@@ -70,12 +57,23 @@ public class Main
 				
     				case "add worker":  
 					{
+						
 						AddWorker(worker);
+						System.out.println("Worker was created");
+             					break;
+					}
+				case "show worker cost":  
+					{
+						System.out.println("What number?");
+						s = scan.nextLine();
+						worker[Integer.parseInt(s)].ShowHim();
              					break;
 					}
     				default: 
 					{
-						System.out.println("Unknown command");
+						System.out.println("commands: add worker");
+						System.out.println("          show all workers");
+						System.out.println("          show worker cost");
 						System.exit(0);
              					break;
 					}

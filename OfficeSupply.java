@@ -10,7 +10,7 @@ public class OfficeSupply
 
 	public OfficeSupply()
 	{
-		System.out.println("here is the pen");
+		//System.out.println("here is the pen");
 		this.name = "";
 		this.cost = 0;
 	}

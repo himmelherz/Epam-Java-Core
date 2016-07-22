@@ -13,7 +13,7 @@ public class Worker
 		this.supply = new OfficeSupply[10];
 		for(int i=0; i < 10; i++)
 		supply[i] = new OfficeSupply();
-		System.out.println("Worker was created");
+		//System.out.println("Worker was created");
 	}
 	
 	public double AllCost()
@@ -47,6 +47,7 @@ public class Worker
 				System.out.println("Item " + this.supply[i].name + " which costs: " + this.supply[i].cost);
 			}
 		}
+		
 	}
 
 }
