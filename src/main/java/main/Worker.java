@@ -6,6 +6,11 @@ import officesupply.OfficeSupply;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+
 
  class Notepad extends OfficeSupply
 {
@@ -55,11 +60,11 @@ class BegginerStuff
 		Pen pen = new Pen();
 		Notepad notepad = new Notepad();
 		Table table = new Table();
-			this.stuff.set(0, pen);
+			this.stuff.set(0, table);
 			
-			this.stuff.set(1,  notepad);
+			this.stuff.set(1,  pen);
 
-			this.stuff.set(2, table);
+			this.stuff.set(2, notepad);
 		
 	}
 }
@@ -92,7 +97,7 @@ public class Worker
 	
 		}
 	
-	
+		
 	public double AllCost()
 			
 	{
@@ -210,6 +215,96 @@ public class Worker
 
 
 		
+
+
+	public void SortBy(String s)
+		
+	{
+		
+			switch (s) 
+				
+		{
+    				
+			case "by cost":  
+					
+			{
+	
+				for(int j = 0; j<this.supply.size();j++)
+				for (int i = 0; i<this.supply.size();i++)
+		
+				{
+					
+					if((this.supply.get(i) != null) && (i != (this.supply.size() - 1)))
+					{
+						OfficeSupply next = new OfficeSupply();
+						next = this.supply.get(i+1);
+						OfficeSupply current = new OfficeSupply();
+						current = this.supply.get(i);
+						if((Double.valueOf(current.cost)).compareTo(next.cost) == 1)
+						{
+							
+						}
+						else if((Double.valueOf(current.cost)).compareTo(next.cost) == -1)
+						{
+							
+							this.supply.set(i,next) ;
+							this.supply.set(i+1,current) ;
+						}
+					}
+				}
+				break;
+											
+			}
+	
+
+
+			case "by name":  
+					
+			{
+	
+				Collections.sort(supply);
+											
+			}
+
+			case "by both":
+			{
+				for(int j = 0; j<this.supply.size();j++)
+				for (int i = 0; i<this.supply.size();i++)
+		
+				{
+					
+					if((this.supply.get(i) != null) && (i != (this.supply.size() - 1)))
+					{
+						OfficeSupply next = new OfficeSupply();
+						next = this.supply.get(i+1);
+						OfficeSupply current = new OfficeSupply();
+						current = this.supply.get(i);
+						if((Double.valueOf(current.cost)).compareTo(next.cost) == 1)
+						{
+							
+						}
+						else if((Double.valueOf(current.cost)).compareTo(next.cost) == -1)
+						{
+							
+							this.supply.set(i,next) ;
+							this.supply.set(i+1,current) ;
+						}
+					}
+				}
+				Collections.sort(supply);
+				break;
+			}			
+    				
+							
+							
+		}
+
+
+				
+	}
+
+
+
 	public void ShowHim()
 		
 	{

@@ -2,11 +2,12 @@ package officesupply;
 
 //import javase01.t01.log.Log;
 
-//import java.util.Scanner;
-	
+import java.util.Scanner;
 
-public class OfficeSupply
+import java.util.Arrays;	
 
+
+public class OfficeSupply implements Comparable<OfficeSupply>
 {
 	
 	public double cost;
@@ -78,6 +79,30 @@ public class OfficeSupply
 	}
 
 
+	public int compareTo(OfficeSupply os)
+	
+	{
+		
+		String[] s = new String[2];
+		s[0] = this.name;
+		s[1] = os.name;
+		Arrays.sort(s);
+		if((this.name).equals(s) )
+		{
+			
+			return 1;
+
+		}		
+		else
+		return -1;	
+	}
+
+
+
+
+		
+	
+	
 
 	
 

@@ -157,7 +157,41 @@ public class Main
 					break;
 					
 				}
- 			
+ 	
+				case "sort worker":  
+					
+				{
+	
+					System.out.println("What number?");
+						
+					String n = scan.nextLine();
+						
+					System.out.println("How do you wnat to sort?");
+						
+					s = scan.nextLine();
+						
+					worker[Integer.parseInt(n)].SortBy(s);
+             					
+					break;
+					
+				}
+ 
+				case "standart":  
+					
+				{
+	
+					AddWorker(worker);
+
+					System.out.println("What number?");
+						
+					s = scan.nextLine();
+						
+					worker[Integer.parseInt(s)].AddBeginnerStuff();
+               					
+					break;
+					
+				}
+ 		
 				default: 
 					
 				{
@@ -171,7 +205,9 @@ public class Main
 					System.out.println("          add item");
 
 					System.out.println("          add beginner stuff");
-			
+	
+					System.out.println("          sort worker");
+		
 			
              	break;
 						
