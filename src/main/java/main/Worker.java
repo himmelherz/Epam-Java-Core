@@ -1,6 +1,6 @@
-package task2.worker;
+package worker;
 
-import task2.officesupply.OfficeSupply;
+import officesupply.OfficeSupply;
 
 
 

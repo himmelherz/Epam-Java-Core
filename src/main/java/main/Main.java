@@ -1,8 +1,8 @@
-package task2.main;
+package main;
 
-import task2.officesupply.OfficeSupply;
+import officesupply.OfficeSupply;
 
-import task2.worker.Worker;
+import worker.Worker;
 
 import java.util.Scanner;
 

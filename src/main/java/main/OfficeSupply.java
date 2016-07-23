@@ -1,4 +1,4 @@
-package task2.officesupply;
+package officesupply;
 
 //import javase01.t01.log.Log;
 
