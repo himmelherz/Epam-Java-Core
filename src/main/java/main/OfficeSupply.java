@@ -5,7 +5,6 @@ package task2.officesupply;
 //import java.util.Scanner;
 	
 
-
 public class OfficeSupply
 
 {
