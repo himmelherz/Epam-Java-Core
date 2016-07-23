@@ -3,7 +3,7 @@ package worker;
 import officesupply.OfficeSupply;
 
 
-
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -40,24 +40,26 @@ import java.util.Scanner;
 
 class BegginerStuff
 {
-	OfficeSupply[] stuff = new OfficeSupply[10];
+	ArrayList<OfficeSupply> stuff = new ArrayList<OfficeSupply>();
 	public BegginerStuff()
 	{
 		for(int i=0; i < 10; i++)
-		
-		stuff[i] = new OfficeSupply();
+
+		{	
+		OfficeSupply os = new OfficeSupply();
+		os.name = "";
+		os.cost = 0.0; 	
+		this.stuff.add(os);
 	
+		}
 		Pen pen = new Pen();
 		Notepad notepad = new Notepad();
 		Table table = new Table();
-			this.stuff[0] = new OfficeSupply();
-			this.stuff[0] = pen;
+			this.stuff.set(0, pen);
 			
-			this.stuff[1] = new OfficeSupply();
-			this.stuff[1] = notepad;
+			this.stuff.set(1,  notepad);
 
-			this.stuff[2] = new OfficeSupply();
-			this.stuff[2] = table;
+			this.stuff.set(2, table);
 		
 	}
 }
@@ -72,7 +74,7 @@ public class Worker
 		public Notepad note;
 		public String name;
 	
-		public OfficeSupply supply[] = new OfficeSupply[10];
+		public ArrayList<OfficeSupply> supply = new ArrayList<OfficeSupply>();
 	
 		public Worker()
 	
@@ -80,11 +82,11 @@ public class Worker
 		
 			this.name = "";
 		
-			this.supply = new OfficeSupply[10];
+			//this.supply = new OfficeSupply[10];
 		
-			for(int i=0; i < 10; i++)
+			//for(int i=0; i < 10; i++)
 		
-			supply[i] = new OfficeSupply();
+			//supply[i] = new OfficeSupply();
 		
 			//System.out.println("Worker was created");
 	
@@ -97,12 +99,13 @@ public class Worker
 		
 		double all_cost = 0.0;
 		
-		for(int i=0;i<this.supply.length;i++)
+		for(int i=0;i<this.supply.size();i++)
 		
 		{
-			
-			
-			all_cost += this.supply[i].cost;
+	
+			OfficeSupply os = new OfficeSupply();		
+			os = this.supply.get(i);			
+			all_cost += os.cost;
 		
 		}
 		
@@ -117,14 +120,17 @@ public class Worker
 	{
 		
 		
-		for(int i=0;i<this.supply.length;i++)
+		for(int i=0;i<this.supply.size();i++)
 		
 		{
-			
-			this.supply[i].name = "";
-			
-			this.supply[i].cost = 0.0;
 		
+			OfficeSupply os = new OfficeSupply();	
+			os.name = "";
+
+						
+			os.cost = 0.0;
+
+			this.supply.add(os);		
 		}
 		
 	
@@ -166,18 +172,7 @@ public class Worker
 			{
 	
 				Pen pen = new Pen();					
-				for(int i=0;i<this.supply.length;i++)
-		
-				{
-		
-					if(this.supply[i].name.equals("") && (k == 0))
-
-					{
-						k = 1;
-						this.supply[i] = pen;
-					}			
-				}
-           					
+				this.supply.add(pen);          					
 				break;
 					
 			}
@@ -189,18 +184,8 @@ public class Worker
 						
 						
 				Notepad notepad = new Notepad();					
-				for(int i=0;i<this.supply.length;i++)
-		
-				{
-		
-					if(this.supply[i].name.equals("") && (k == 0))
-
-					{
-						k = 1;
-						this.supply[i] = notepad;
-					}			
-				}
-           					
+								
+				this.supply.add(notepad);          					
 				break;
   					
 			}
@@ -235,15 +220,17 @@ public class Worker
 			
 			System.out.println("Worker " + name + " has: ");
 			
-			for(int i=0;i<this.supply.length;i++)
+			for(int i=0;i<this.supply.size();i++)
 			
 			{
 	
-				if(this.supply[i].name != "")
+				OfficeSupply os = new OfficeSupply();		
+				os = this.supply.get(i);
+				if(os.name != "")
 		
 				{
 			
-					System.out.println("Item " + this.supply[i].name + " which costs: " + this.supply[i].cost);
+					System.out.println("Item " + os.name + " which costs: " + os.cost);
 		
 				}		
 			}

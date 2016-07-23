@@ -5,6 +5,7 @@
     <groupId>org.springframework</groupId>
     <artifactId>gs-maven</artifactId>
     <packaging>jar</packaging>
+	<name>Main</name>
     <version>0.1.0</version>
 
        <build>
