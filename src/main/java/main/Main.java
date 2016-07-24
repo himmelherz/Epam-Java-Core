@@ -207,7 +207,8 @@ public class Main
 					System.out.println("          add beginner stuff");
 	
 					System.out.println("          sort worker");
-		
+
+					System.out.println("          standart");		
 			
              	break;
 						

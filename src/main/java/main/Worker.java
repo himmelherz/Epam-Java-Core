@@ -9,8 +9,39 @@ import java.util.Scanner;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.*;
 
 
+class ComparatorByCost implements Comparator<OfficeSupply>  
+	{
+        	public int compare(OfficeSupply a,OfficeSupply b) 
+		{
+            		return  (Double.valueOf(b.cost)).compareTo(Double.valueOf(a.cost));
+        	}
+	}
+
+class ComparatorByName implements Comparator<OfficeSupply>  
+	{
+        	public int compare(OfficeSupply a,OfficeSupply b) 
+		{
+			String as = a.name;	
+			String bs = b.name;	
+            		return  a.name.compareTo(b.name);
+        	}
+	}
+
+class ComparatorByBoth implements Comparator<OfficeSupply>  
+	{
+        	public int compare(OfficeSupply a,OfficeSupply b) 
+		{
+            		if(a.name.compareTo(b.name) == 0)
+			{
+				return  (Double.valueOf(b.cost)).compareTo(Double.valueOf(a.cost));
+			}
+			else
+			return  a.name.compareTo(b.name);
+        	}
+	}
 
  class Notepad extends OfficeSupply
 {
@@ -65,15 +96,20 @@ class BegginerStuff
 			this.stuff.set(1,  pen);
 
 			this.stuff.set(2, notepad);
+			this.stuff.set(3, pen);
 		
 	}
 }
+
+
+
 
 public class Worker
 	
 {
 	
 
+   
 
 
 		public Notepad note;
@@ -229,29 +265,7 @@ public class Worker
 					
 			{
 	
-				for(int j = 0; j<this.supply.size();j++)
-				for (int i = 0; i<this.supply.size();i++)
-		
-				{
-					
-					if((this.supply.get(i) != null) && (i != (this.supply.size() - 1)))
-					{
-						OfficeSupply next = new OfficeSupply();
-						next = this.supply.get(i+1);
-						OfficeSupply current = new OfficeSupply();
-						current = this.supply.get(i);
-						if((Double.valueOf(current.cost)).compareTo(next.cost) == 1)
-						{
-							
-						}
-						else if((Double.valueOf(current.cost)).compareTo(next.cost) == -1)
-						{
-							
-							this.supply.set(i,next) ;
-							this.supply.set(i+1,current) ;
-						}
-					}
-				}
+				Collections.sort(supply, new ComparatorByCost());
 				break;
 											
 			}
@@ -262,36 +276,14 @@ public class Worker
 					
 			{
 	
-				Collections.sort(supply);
+				Collections.sort(supply, new ComparatorByName());
+				break;
 											
 			}
 
 			case "by both":
 			{
-				for(int j = 0; j<this.supply.size();j++)
-				for (int i = 0; i<this.supply.size();i++)
-		
-				{
-					
-					if((this.supply.get(i) != null) && (i != (this.supply.size() - 1)))
-					{
-						OfficeSupply next = new OfficeSupply();
-						next = this.supply.get(i+1);
-						OfficeSupply current = new OfficeSupply();
-						current = this.supply.get(i);
-						if((Double.valueOf(current.cost)).compareTo(next.cost) == 1)
-						{
-							
-						}
-						else if((Double.valueOf(current.cost)).compareTo(next.cost) == -1)
-						{
-							
-							this.supply.set(i,next) ;
-							this.supply.set(i+1,current) ;
-						}
-					}
-				}
-				Collections.sort(supply);
+				Collections.sort(supply, new ComparatorByBoth());
 				break;
 			}			
     				
