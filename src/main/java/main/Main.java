@@ -295,15 +295,11 @@ public class Main
 					System.out.println("commands: add student");
 						
 					System.out.println("          show all students");
-						
-					System.out.println("          show student cost");
 
-					System.out.println("          add discipline");
+					System.out.println("          add course");
+					System.out.println("          find dude");
 
-					System.out.println("          add beginner stuff");
 	
-					System.out.println("          sort student");
-
 					System.out.println("          standart");		
 			
              	break;
