@@ -26,7 +26,7 @@ public class Main{
 			for(int j = 0; j < yellow_submarine.position; j++)
 			System.out.print(" ");
 			if(yellow_submarine.direction != 1)
-					System.out.print("                                         _|```| ");
+					System.out.print("  _|```| ");
 			else
 			System.out.print(" |```|_");
 
@@ -36,15 +36,15 @@ public class Main{
 
 			if((yellow_submarine.direction != 1) )
 				if(yellow_submarine.position % 2 == 0)
-					System.out.print("|Semen, thanks for teaching Java|----  x(<><><>)");
+					System.out.print("x(<><><>)");
 				else
-					System.out.print("|Semen, thanks for teaching Java|----  -(<><><>)");
+					System.out.print("-(<><><>)");
 			else
 			if((yellow_submarine.direction == 1) )
 				if(yellow_submarine.position % 2 == 0)
-					System.out.print("(<><><>)x  ----|Semen, thanks for teaching Java|");
+					System.out.print("(<><><>)x");
 				else
-					System.out.print("(<><><>)-  ----|Semen, thanks for teaching Java|");
+					System.out.print("(<><><>)-");
 			System.out.println("");
 
 
