@@ -2,65 +2,78 @@ package main;
 
 import course.Course;
 
+
 import student.Student;
+
 
 import java.util.Scanner;
 
+
 import java.util.Arrays;	
+
 import java.util.*;	
 	
 
+
 public class Main
-	{
+	
+{
 
 	
 
-		public static void addCourse(ArrayList<Course> courses)
-		{
-			Scanner scan = new Scanner(System.in);
+		
+	public static void addCourse(ArrayList<Course> courses)
+		
+	{
+			
+		Scanner scan = new Scanner(System.in);
 
-			System.out.println("Enter the course name");
+			
+		System.out.println("Enter the course name");
 
-			String s = scan.nextLine();
+			
+		String s = scan.nextLine();
 
-			switch (s) 
+			
+		switch (s) 
 				
+			
+		{
+    	
+			case "math": 
 			{
-    				
-							
-    				
-				case "math":  
-					
-				{
 		
-					Course course = Course.MATH;				
-						
-					courses.add(course);					
-					System.out.println("course was created");
+					
+				Course course = Course.MATH;
+				courses.add(course);			
+				System.out.println("course was created");
    
-					System.out.println("___________________");          				
-					break;
-					
-				}
+	
+				System.out.println("___________________");          
+				break;
+	
+			}
 
-				case "english":  
-					
-				{
 		
-					Course course = Course.ENGLISH;				
-						
-					courses.add(course);					
-					System.out.println("course was created");
+			case "english":  
+	
+			{
+				Course course = Course.ENGLISH;		
+				courses.add(course);		
+				System.out.println("course was created");
    
-					System.out.println("___________________");          				
-					break;
-					
-				}
 
-				case "it":  
-					
-				{
+				System.out.println("___________________");        
+				break;
 		
+			}
+
+		
+			case "it":  
+
+			{
+		
+
 					Course course = Course.IT;				
 						
 					courses.add(course);					
@@ -98,7 +111,8 @@ public class Main
 					
 		Scanner scan = new Scanner(System.in);
 	
-		int counter = 0;		
+		
+int counter = 0;		
 		while(counter == 0)
 			
 		{
