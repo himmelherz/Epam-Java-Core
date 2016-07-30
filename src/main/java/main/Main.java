@@ -3,10 +3,10 @@ package main;
 import officesupply.OfficeSupply;
 
 import worker.Worker;
-
 import java.util.Scanner;
-
-	
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;	
 	
 
 public class Main
@@ -14,65 +14,36 @@ public class Main
 	{
 
 	
-		public static void AddWorker(Worker[] worker)
+		public static void AddWorker(ArrayList<Worker> worker)
 	
 		{
 		
 		
 			Scanner scan = new Scanner(System.in);
 		
-			int k =0;
-		
-			for(int i=0; i< worker.length;i++)
-		
-			{
+			System.out.println("Enter name of worker: ");
+				
+			String s = scan.nextLine();
+				
+			Worker new_worker = new Worker();
+			new_worker.name = s;
+				
+			worker.add(new_worker);
 			
-			
-				if(worker[i].name.equals("") && (k == 0))
-			
-				{
-				
-					k = 1;
-				
-					System.out.println("Enter name of worker: ");
-				
-					String s = scan.nextLine();
-				
-					worker[i].name = s;
-				
-					worker[i].Fill();
-			
-				}
-		
-			}
 	
 		}
 
 	
 		public static void main(String[] args) 
 					
-		{	
+		{	Scanner scan = new Scanner(System.in);
+		
 			int counter = 0;
 			
-			OfficeSupply supply = new OfficeSupply();
-			
-			OfficeSupply pen_for_examine = new OfficeSupply();	
 
-			
-			
-			Worker worker[] = new Worker[100];
+			ArrayList<Worker> worker = new ArrayList<Worker>();
 				
-		
-				
-			for(int i=0;i<100;i++)
-						
-			{
-							
-				worker[i] = new Worker();
-						
-			}
-			
-		Scanner scan = new Scanner(System.in);
+
 			
 		while(counter == 0)
 			
@@ -90,14 +61,14 @@ public class Main
 					
 				{
 						
-					for(int i=0;i<10;i++)
+					for(int i=0;i<worker.size();i++)
 						
 					{
 							
-						worker[i].ShowHim();
+						worker.get(i).ShowHim();
 						
 					}
-             					
+             				System.out.println("***Done!***");	
 					break;
 					
 				}
@@ -111,7 +82,7 @@ public class Main
 					AddWorker(worker);
 						
 					System.out.println("Worker was created");
-             				
+             				System.out.println("***Done!***");
 					break;
 					
 				}
@@ -124,8 +95,8 @@ public class Main
 						
 					s = scan.nextLine();
 						
-					worker[Integer.parseInt(s)].AllCost();
-             					
+					worker.get(Integer.parseInt(s)).AllCost();
+             					System.out.println("***Done!***");
 					break;
 					
 				}
@@ -138,8 +109,8 @@ public class Main
 						
 					s = scan.nextLine();
 						
-					worker[Integer.parseInt(s)].AddItem();
-             					
+					worker.get(Integer.parseInt(s)).AddItem();
+             				System.out.println("***Done!***");	
 					break;
 					
 				}
@@ -151,9 +122,10 @@ public class Main
 					System.out.println("What number?");
 						
 					s = scan.nextLine();
-						
-					worker[Integer.parseInt(s)].AddBeginnerStuff();
-             					
+					
+					worker.get(Integer.parseInt(s)).AddBeginnerStuff();
+					
+             				System.out.println("***Done!***");	
 					break;
 					
 				}
@@ -170,8 +142,8 @@ public class Main
 						
 					s = scan.nextLine();
 						
-					worker[Integer.parseInt(n)].SortBy(s);
-             					
+					worker.get(Integer.parseInt(n)).SortBy(s);
+             				System.out.println("***Done!***");	
 					break;
 					
 				}
@@ -186,8 +158,8 @@ public class Main
 						
 					s = scan.nextLine();
 						
-					worker[Integer.parseInt(s)].AddBeginnerStuff();
-               					
+					worker.get(Integer.parseInt(s)).AddBeginnerStuff();
+               				System.out.println("***Done!***");	
 					break;
 					
 				}
