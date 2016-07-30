@@ -30,7 +30,7 @@ public class Main
 				System.out.println("Enter the Text");
 				s = scan.nextLine();
 				notepad.addLog(s);       
-				System.out.println("*__________________*"); 
+				System.out.println("***Done!***"); 
 				break;
 	
 			}
@@ -42,7 +42,7 @@ public class Main
 				System.out.println("What number?");
 				s = scan.nextLine();
 				notepad.editLog(Integer.parseInt(s)); 
-				System.out.println("*__________________*");        
+				System.out.println("***Done!***"); 
 				break;
 		
 			}
@@ -56,7 +56,7 @@ public class Main
 				System.out.println("What number?");
 				s = scan.nextLine();
 				notepad.deleteLog(Integer.parseInt(s));  
-				System.out.println("*__________________*");     				
+				System.out.println("***Done!***"); 			
 					break;
 					
 			}
@@ -64,7 +64,7 @@ public class Main
 
 			{
 					notepad.showLogs();  
-					System.out.println("*__________________*");    				
+					System.out.println("***Done!***"); 		
 					break;
 					
 			}
@@ -78,7 +78,7 @@ public class Main
 					System.out.println("         edit log");
 					System.out.println("       delete log");
 					System.out.println("        show logs");
-					System.out.println("*__________________*"); 
+					System.out.println("***Done!***"); 
              				break;
 						
 			}

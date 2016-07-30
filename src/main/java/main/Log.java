@@ -2,7 +2,7 @@ package log;
 
 public class Log
 	{
-		public String text;
+		private String text;
 		public Log()
 		{
 			text = "";

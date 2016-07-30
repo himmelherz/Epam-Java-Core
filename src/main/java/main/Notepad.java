@@ -90,9 +90,13 @@ public class Notepad
 		Log new_log = new Log();
 		new_log.setText(s);
 		if(logs.size() >= number)
-		logs.set(number, new_log);
+		{
+			logs.set(number, new_log);
+		}
 		else
-		System.out.println("no such  log!");
+		{
+			System.out.println("no such  log!");
+		}
 		
 	}
 }
