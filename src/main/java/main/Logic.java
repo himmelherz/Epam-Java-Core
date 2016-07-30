@@ -1,4 +1,4 @@
-package javase01.t01.logic;
+package logic;
 
 public class Logic 
 	{
@@ -6,8 +6,6 @@ public class Logic
 		{
 			double f;
 			f = 0;
-			//a_n = epsilon + 1;
-			//Logic logic = new Logic();
 			f = Math.tan(2*x) - 3;
 			return f;
 		}
