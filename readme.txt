@@ -1,3 +1,3 @@
-to launch
+to launch use maven.
 
-mvn exec:java
+Remember, workers begin from "0"

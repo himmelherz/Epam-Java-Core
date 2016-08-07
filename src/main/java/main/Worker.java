@@ -6,113 +6,17 @@ import officesupply.OfficeSupply;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+
 import java.util.*;
-
-
-class ComparatorByCost implements Comparator<OfficeSupply>  
-	{
-        	public int compare(OfficeSupply a,OfficeSupply b) 
-		{
-            		return  (Double.valueOf(b.cost)).compareTo(Double.valueOf(a.cost));
-        	}
-	}
-
-class ComparatorByName implements Comparator<OfficeSupply>  
-	{
-        	public int compare(OfficeSupply a,OfficeSupply b) 
-		{
-			String as = a.name;	
-			String bs = b.name;	
-            		return  a.name.compareTo(b.name);
-        	}
-	}
-
-class ComparatorByBoth implements Comparator<OfficeSupply>  
-	{
-        	public int compare(OfficeSupply a,OfficeSupply b) 
-		{
-            		if(a.name.compareTo(b.name) == 0)
-			{
-				return  (Double.valueOf(b.cost)).compareTo(Double.valueOf(a.cost));
-			}
-			else
-			return  a.name.compareTo(b.name);
-        	}
-	}
-
- class Notepad extends OfficeSupply
-{
-	public Notepad()
-	{
-		this.name = "notepad";
-		
-		this.cost = 30;
-	}
-} 
-
-
- class Pen extends OfficeSupply
-{
-	public Pen()
-	{
-		this.name = "pen";
-		
-		this.cost = 20;
-	}
-} 
-
- class Table extends OfficeSupply
-{
-	public Table()
-	{
-		this.name = "table";
-		
-		this.cost = 40;
-	}
-} 
-
-class BegginerStuff
-{
-	ArrayList<OfficeSupply> stuff = new ArrayList<OfficeSupply>();
-	public BegginerStuff()
-	{
-		for(int i=0; i < 10; i++)
-
-		{	
-		OfficeSupply os = new OfficeSupply();
-		os.name = "";
-		os.cost = 0.0; 	
-		this.stuff.add(os);
-	
-		}
-		Pen pen = new Pen();
-		Notepad notepad = new Notepad();
-		Table table = new Table();
-			this.stuff.set(0, table);
-			
-			this.stuff.set(1,  pen);
-
-			this.stuff.set(2, notepad);
-			this.stuff.set(3, pen);
-		
-	}
-}
-
-
+import comparators.*;
+import officesupply.*;
 
 
 public class Worker
 	
 {
-	
 
-   
-
-
-		public Notepad note;
+		
 		public String name;
 	
 		public ArrayList<OfficeSupply> supply = new ArrayList<OfficeSupply>();
@@ -122,14 +26,7 @@ public class Worker
 		{
 		
 			this.name = "";
-		
-			//this.supply = new OfficeSupply[10];
-		
-			//for(int i=0; i < 10; i++)
-		
-			//supply[i] = new OfficeSupply();
-		
-			//System.out.println("Worker was created");
+
 	
 		}
 	
@@ -264,7 +161,7 @@ public class Worker
 			case "by cost":  
 					
 			{
-	
+				
 				Collections.sort(supply, new ComparatorByCost());
 				break;
 											
