@@ -1,11 +1,11 @@
 package main;
 
-import course.Course;
 
 
+import group.Group;
 import student.Student;
-
-
+import datas.Datas;
+import course.Course;
 import java.util.Scanner;
 
 
@@ -22,97 +22,77 @@ public class Main
 	
 
 		
-	public static void addCourse(ArrayList<Course> courses)
+	public static void addGroup(ArrayList<Group> groupes)
 		
 	{
 			
 		Scanner scan = new Scanner(System.in);
 
 			
-		System.out.println("Enter the course name");
+		System.out.println("Enter the group number");
 
 			
 		String s = scan.nextLine();
+		
+		Group new_group = new Group(Integer.parseInt(s));
+
+		//new_group.number = Integer.parseInt(s);
+
+		groupes.add(new_group);
+			
+	}
+	
+	public static void addStandart(ArrayList<Group> groupes)
+		
+	{
+			
+		Scanner scan = new Scanner(System.in);
 
 			
-		switch (s) 
-				
+		//System.out.println("Enter the group number");
+
 			
+		//String s = scan.nextLine();
+		
+		Group new_group = new Group(1);
+
+		//new_group.number = Integer.parseInt(s);
+
+		groupes.add(new_group);
+
+
+		for(int i=0; i < 3; ++i)
 		{
-    	
-			case "math": 
-			{
-		
-					
-				Course course = Course.MATH;
-				courses.add(course);			
-				System.out.println("course was created");
-   
-	
-				System.out.println("___________________");          
-				break;
-	
-			}
-
-		
-			case "english":  
-	
-			{
-				Course course = Course.ENGLISH;		
-				courses.add(course);		
-				System.out.println("course was created");
-   
-
-				System.out.println("___________________");        
-				break;
-		
-			}
-
-		
-			case "it":  
-
-			{
-		
-
-					Course course = Course.IT;				
-						
-					courses.add(course);					
-					System.out.println("course was created");
-   
-					System.out.println("___________________");          				
-					break;
-					
-				}
-
-				default: 
-					
-				{
-						
-							
+			Student new_student = new Student("Student_" + i);
 			
-             	break;
-						
-				}
-				
-			}
-
-
 			
+
+			Datas new_course = new Datas(5.0, "math");
+			new_student.addCourse(new_course);
+
+			new_course = new Datas(4.0, "english");
+			new_student.addCourse(new_course);
+
+			new_course = new Datas(3.0, "it");
+			new_student.addCourse(new_course);
+
+			groupes.get(0).addStudent(new_student);
 		}
+			
+	}
+
+	
+	
+
 			
 		public static void main(String[] args) 
 					
 		{	
-						
-			ArrayList<Course> courses = new ArrayList<Course>();			
-			
-			
-				
-					
-		Scanner scan = new Scanner(System.in);
-	
+			Scanner scan = new Scanner(System.in);				
+		ArrayList<Group> groupes = new ArrayList<Group>();
 		
-int counter = 0;		
+
+		int counter = 0;		
 		while(counter == 0)
 			
 		{
@@ -127,12 +107,12 @@ int counter = 0;
     				
 							
     				
-				case "add course":  
+				case "add group":  
 					
 				{
 						
 						
-					addCourse(courses);
+					addGroup(groupes);
          				
 					break;
 					
@@ -142,72 +122,52 @@ int counter = 0;
 					
 				{
 	
-					System.out.println("What course?");
-				
-					s = scan.nextLine();
-
-					switch(s)
+					System.out.println("Enter group number");
+					 s = scan.nextLine();	
+					for(int i = 0; i< groupes.size(); ++i)
 					{
-						case "math":
+						if(groupes.get(i).number == Integer.parseInt(s))
 						{
-							for(int i = 0; i < courses.size(); i++)
-							{
-								//Course course = courses.get(i)
-								if(courses.get(i).equals(Course.MATH))
-								{
-									Course course = courses.get(i);
-									course.addStudent();
-									courses.set(i, course);
-								}
-							}
-							break;
+							System.out.println("Enter name");
+							String sn = scan.nextLine();
+							Student new_student = new Student(sn);
+							//new_student.name  = sn;
+							groupes.get(i).addStudent(new_student);
+							
 						}
-						case "english":
-						{
-							for(int i = 0; i < courses.size(); i++)
-							{
-								//Course course = courses.get(i)
-								if(courses.get(i).equals(Course.ENGLISH))
-								{
-									Course course = courses.get(i);
-									course.addStudent();
-									courses.set(i, course);
-								}
-							}
-							break;
-						}
-						case "it":
-						{
-							for(int i = 0; i < courses.size(); i++)
-							{
-								//Course course = courses.get(i)
-								if(courses.get(i).equals(Course.IT))
-								{
-									Course course = courses.get(i);
-									course.addStudent();
-									courses.set(i, course);
-								}
-							}
-							break;
-						}
-					}     
-					System.out.println("___________________");  				
+					}				
 					break;
 					
 				}
-
-				case "show all courses":  
+				case "add course":  
 					
 				{
-						
-						
-					for(int i=0; i< courses.size(); i++)
+					System.out.println("Enter group number");
+					 s = scan.nextLine();	
+					for(int i = 0; i< groupes.size(); ++i)
+					{
+						if(groupes.get(i).number == Integer.parseInt(s))
+						{
+							System.out.println("Enter Student number");
+							String sn = scan.nextLine();
+							groupes.get(i).addCourseToStudent(Integer.parseInt(sn));
+							
+						}
+					}
 					
-{
-						Course course = courses.get(i);
-						course.showAllStudents();
-					}  
-					System.out.println("___________________");      				
+         				
+					break;
+					
+				}
+				case "show all groupes":  
+					
+				{
+					for(int i = 0; i< groupes.size(); ++i)
+					{
+						groupes.get(i).printAllGroupInfo();
+					}	
+						
+					   				
 					break;
 					
 				}
@@ -216,30 +176,7 @@ int counter = 0;
 					
 				{
 		
-					ArrayList<Student> dude = new ArrayList<Student>();
-					
-					System.out.println("What's his name?");
-				
-					s = scan.nextLine();
-	
-					System.out.println("Student " + s + " has: "); 			
-						
-					for(int i=0; i< courses.size(); i++)
-					
-{
-						Course course = courses.get(i);
-						for(int j=0; j < course.getList().size(); j++)
-						{
-							if((course.getList().get(j)).name.equals(s))
-							{
-								dude.add(course.getList().get(j));
-								System.out.println(course.getName() + " with " + course.getList().get(j).getGrade()  + " grade ");
-							}
-						}
-
-					}  
-					
-					System.out.println("___________________");      				
+					 groupes.get(i).compareWithOthers();				
 					break;
 					
 				}
@@ -248,67 +185,33 @@ int counter = 0;
 					
 				{
 						
-						
-					addCourse(courses);
-
-					addCourse(courses);
-
-					addCourse(courses);
-    
-					for(int z= 0; z< 2;z++)
-					{
-							for(int i = 0; i < courses.size(); i++)
-							{
-								//Course course = courses.get(i)
-								if(courses.get(i).equals(Course.MATH))
-								{
-									Course course = courses.get(i);
-									course.addStudent();
-									courses.set(i, course);
-								}
-							}
-							 				
-					}
-					for(int z= 0; z< 2;z++)
-					{
-							for(int i = 0; i < courses.size(); i++)
-							{
-								//Course course = courses.get(i)
-								if(courses.get(i).equals(Course.IT))
-								{
-									Course course = courses.get(i);
-									course.addStudent();
-									courses.set(i, course);
-								}
-							}
-							 				
-					}
-					for(int z= 0; z< 2;z++)
-					{
-							for(int i = 0; i < courses.size(); i++)
-							{
-								//Course course = courses.get(i)
-								if(courses.get(i).equals(Course.ENGLISH))
-								{
-									Course course = courses.get(i);
-									course.addStudent();
-									courses.set(i, course);
-								}
-							}
-							 				
-					}
-					System.out.println("___________________");
-					break;
+					addStandart(groupes);	
 					
+					break;	
 				}
-
+				case "set grade":  
+					
+				{
+						
+					System.out.println("Enter group number");
+					 s = scan.nextLine();	
+					for(int i = 0; i< groupes.size(); ++i)
+					{
+						if(groupes.get(i).number == Integer.parseInt(s))
+						{
+							groupes.get(i).setStudentGrade();
+							
+						}
+					}				
+					break;
+				}
 				default: 
 					
 				{
 						
 					System.out.println("commands: add student");
 						
-					System.out.println("          show all students");
+					System.out.println("          show all groupes");
 
 					System.out.println("          add course");
 					System.out.println("          find dude");
@@ -324,10 +227,9 @@ int counter = 0;
 
 				
 			
-		}
-        
+}
 		
-	}
+		}
 
 
 
