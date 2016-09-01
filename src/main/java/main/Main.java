@@ -14,7 +14,7 @@ public class Main
 	{
 
 	
-		public static void AddWorker(ArrayList<Worker> worker)
+		public static void addWorker(ArrayList<Worker> worker)
 	
 		{
 		
@@ -65,7 +65,7 @@ public class Main
 						
 					{
 							
-						worker.get(i).ShowHim();
+						worker.get(i).showHim();
 						
 					}
              				System.out.println("***Done!***");	
@@ -79,7 +79,7 @@ public class Main
 				{
 						
 						
-					AddWorker(worker);
+					addWorker(worker);
 						
 					System.out.println("Worker was created");
              				System.out.println("***Done!***");
@@ -95,7 +95,7 @@ public class Main
 						
 					s = scan.nextLine();
 						
-					worker.get(Integer.parseInt(s)).AllCost();
+					worker.get(Integer.parseInt(s)).allCost();
              					System.out.println("***Done!***");
 					break;
 					
@@ -109,7 +109,7 @@ public class Main
 						
 					s = scan.nextLine();
 						
-					worker.get(Integer.parseInt(s)).AddItem();
+					worker.get(Integer.parseInt(s)).addItem();
              				System.out.println("***Done!***");	
 					break;
 					
@@ -123,7 +123,7 @@ public class Main
 						
 					s = scan.nextLine();
 					
-					worker.get(Integer.parseInt(s)).AddBeginnerStuff();
+					worker.get(Integer.parseInt(s)).addBeginnerStuff();
 					
              				System.out.println("***Done!***");	
 					break;
@@ -142,7 +142,7 @@ public class Main
 						
 					s = scan.nextLine();
 						
-					worker.get(Integer.parseInt(n)).SortBy(s);
+					worker.get(Integer.parseInt(n)).sortBy(s);
              				System.out.println("***Done!***");	
 					break;
 					
@@ -152,13 +152,13 @@ public class Main
 					
 				{
 	
-					AddWorker(worker);
+					addWorker(worker);
 
 					System.out.println("What number?");
 						
 					s = scan.nextLine();
 						
-					worker.get(Integer.parseInt(s)).AddBeginnerStuff();
+					worker.get(Integer.parseInt(s)).addBeginnerStuff();
                				System.out.println("***Done!***");	
 					break;
 					

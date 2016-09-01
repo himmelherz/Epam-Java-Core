@@ -31,7 +31,7 @@ public class Worker
 		}
 	
 		
-	public double AllCost()
+	public double allCost()
 			
 	{
 		
@@ -53,7 +53,7 @@ public class Worker
 	}
 
 	
-	public void Fill()
+	public void fill()
 	
 	{
 		
@@ -76,7 +76,7 @@ public class Worker
 
 
 
-	public void AddBeginnerStuff()
+	public void addBeginnerStuff()
 	
 	{
 		
@@ -89,7 +89,7 @@ public class Worker
 
 
 	
-	public void AddItem()
+	public void addItem()
 	
 	{
 	
@@ -150,7 +150,7 @@ public class Worker
 		
 
 
-	public void SortBy(String s)
+	public void sortBy(String s)
 		
 	{
 		
@@ -194,7 +194,7 @@ public class Worker
 
 
 
-	public void ShowHim()
+	public void showHim()
 		
 	{
 		
